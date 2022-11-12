@@ -47,7 +47,6 @@
 .add__info {
   display: flex;
   flex-direction: column;
-  list-style: circle;
 }
 
 .details__element {

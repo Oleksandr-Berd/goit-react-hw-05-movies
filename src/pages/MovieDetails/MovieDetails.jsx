@@ -63,9 +63,11 @@ export const MovieDetails = () => {
         <p className={css.add__infoText}>Additional information:</p>
         <ul className={css.add__info}>
           {NavItemsDetails.map(({ href, text }) => (
-            <Link to={href} key={href} className={css.details__element}>
-              {text}
-            </Link>
+            <li>
+              <Link to={href} key={href} className={css.details__element}>
+                {text}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
