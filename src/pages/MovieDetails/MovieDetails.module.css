@@ -31,6 +31,10 @@
   font-weight: bold;
 }
 
+.overview__text {
+  font-size: 20px;
+}
+
 .genre {
   font-size: 30px;
   font-weight: bold;
