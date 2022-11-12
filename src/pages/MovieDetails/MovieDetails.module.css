@@ -64,3 +64,8 @@
 .release {
   font-size: 25px;
 }
+
+.poster {
+  height: 630px;
+  width: 600px;
+}

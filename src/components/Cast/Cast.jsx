@@ -20,19 +20,15 @@ export const Cast = () => {
 
   return (
     <ul className={css.conteiner__cast}>
-      {castArray.map(el => (
-        <li key={el.original_name} className={css.cast__el}>
-          {el.profile_path && (
+      {castArray.map(({ original_name, profile_path }) => (
+        <li key={original_name} className={css.cast__el}>
+          {profile_path && (
             <img
-              src={`https://image.tmdb.org/t/p/w200${el.profile_path}`}
-              alt={el.original_name}
+              src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+              alt={original_name}
             />
           )}
-          {/* <img
-            src={`https://image.tmdb.org/t/p/w200${el.profile_path}`}
-            alt={el.original_name}
-          /> */}
-          <p className={css.cast__name}>{el.original_name}</p>
+          <p className={css.cast__name}>{original_name}</p>
         </li>
       ))}
     </ul>

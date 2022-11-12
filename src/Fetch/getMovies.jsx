@@ -23,3 +23,11 @@ export const getMovieByCredits = movieId => {
     )
     .then(response => response.data);
 };
+
+export const getMovieByReviews = movieId => {
+  return axios
+    .get(
+      `https://api.themoviedb.org/3//movie/${movieId}/reviews?api_key=7086826b195235db4a766ce943ec057f`
+    )
+    .then(response => response.data.results);
+};
