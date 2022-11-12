@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { getMovieById } from 'Fetch/getMovies';
 import css from '../MovieDetails/MovieDetails.module.css';
 import { Link } from 'react-router-dom';
@@ -13,8 +13,6 @@ const NavItemsDetails = [
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-
-  //   getMovieById(movieId).then(console.log);
 
   useEffect(() => {
     getMovieById(movieId).then(setMovie);
@@ -33,18 +31,24 @@ export const MovieDetails = () => {
     original_title,
   } = movie;
 
+  const realiseYear = release_date.split('-')[0] + ' year';
+  const votePercentage = (vote_average * 10).toFixed(2) + ' %';
+
   const imageRoute = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
 
-  console.log(movie);
   return (
     <div className={css.container__details}>
+      <Link to="/" className={css.backButton}>
+        Go back
+      </Link>
       <div className={css.container__info}>
         <img src={imageRoute} alt={original_title} className={css.poster} />
         <div className={css.container__movie}>
           {' '}
-          <h1>{title}</h1>
-          <p>({release_date})</p>
-          <p className={css.score}>User score: {vote_average}</p>
+          <h1>
+            {title} ({realiseYear})
+          </h1>
+          <p className={css.score}>User score: {votePercentage}</p>
           <p className={css.overview}>Overview:</p>
           <p className={css.overview__text}>{overview}</p>
           <p className={css.genre}>Genre:</p>
@@ -65,6 +69,7 @@ export const MovieDetails = () => {
           ))}
         </ul>
       </div>
+      <Outlet />
     </div>
   );
 };
