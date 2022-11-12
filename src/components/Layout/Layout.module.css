@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.layout__element {
+  margin-right: 15px;
+}

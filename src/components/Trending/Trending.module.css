@@ -1,0 +1,18 @@
+.trending {
+  display: flex;
+  flex-direction: column;
+}
+
+.trendingItem {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 25px;
+  width: auto;
+}
+
+.trendingItem:hover,
+.trendingItem:focus {
+  color: blue;
+}

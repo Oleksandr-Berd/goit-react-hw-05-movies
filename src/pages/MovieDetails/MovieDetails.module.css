@@ -1,0 +1,46 @@
+/* .container__details {
+ 
+} */
+
+.container__info {
+  display: flex;
+}
+
+.container__movie {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.score {
+  font-size: 25px;
+}
+
+.overview {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.genre {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.genre__item {
+  font-size: 20px;
+}
+
+.add__info {
+  display: flex;
+  flex-direction: column;
+  list-style: circle;
+}
+
+.details__element {
+  margin-bottom: 10px;
+}
+
+.add__infoText {
+  font-size: 25px;
+  font-weight: bold;
+}

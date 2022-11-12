@@ -1,18 +1,25 @@
 import { Route, Routes } from 'react-router-dom';
-import styled from '../components/App.module.css';
-import { Home } from './Home/Home';
-import { Movies } from '../components/Movies/Movies';
+import { Home } from '../pages/Home/Home';
+import { Layout } from './Layout/Layout';
+import { Movies } from '../pages/Movies/Movies';
+import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
+import { NotFound } from '../pages/NotFound/NotFound';
+import css from '../components/App.module.css';
 
 export const App = () => {
   return (
-    <div>
+    <div className={css.container}>
       <Routes>
-        <Route path="/" element={<div>Home</div>} />
-        <Route path="/movies" element={<div>Movie</div>} />
-        {/* <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="/movies/:movieId/cast" element={<Cast />}></Route>
-          <Route path="/movies/:movieId/reviews" element={<Reviews />}></Route>
-        </Route> */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="movies" element={<Movies />}>
+            <Route path=":movieId" element={<MovieDetails />}>
+              <Route path="cast" element={<div>FCK!!!</div>}></Route>
+              <Route path="reviews" element={<div>FCK!!!</div>}></Route>
+            </Route>
+          </Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
