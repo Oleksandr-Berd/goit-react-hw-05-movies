@@ -4,6 +4,8 @@
 
 .container__info {
   display: flex;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .container__movie {
@@ -38,9 +40,15 @@
 
 .details__element {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .add__infoText {
   font-size: 25px;
   font-weight: bold;
+}
+
+.container__addInfo {
+  border-top: solid black;
+  border-bottom: solid black;
 }
