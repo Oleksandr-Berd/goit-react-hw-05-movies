@@ -7,7 +7,7 @@ export default function Trending({ movies }) {
   return (
     <ul className={css.trending}>
       {movies.map(({ id, title }) => (
-        <Link key={id} to={`movies/${id}`} className={css.trendingItem}>
+        <Link key={id} to={`/movies/${id}`} className={css.trendingItem}>
           {title}
         </Link>
       ))}

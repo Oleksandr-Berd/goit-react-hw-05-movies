@@ -13,8 +13,8 @@ export const App = () => {
     <div className={css.container}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* <Route index element={<Navigate to={'/home'} />}></Route> */}
-          <Route index element={<Home />}></Route>
+          <Route index element={<Navigate to={'home'} />}></Route>
+          <Route path="home" element={<Home />}></Route>
           <Route path="movies" element={<Movies />}></Route>
           <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />}></Route>

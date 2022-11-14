@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import css from './AppBar.module.css';
 
 const NavItemsAppBar = [
-  { href: '/', text: 'Home' },
+  { href: 'home', text: 'Home' },
   { href: 'movies', text: 'Movies' },
 ];
 
