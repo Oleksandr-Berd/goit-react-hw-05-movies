@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/256.e9ebd756.chunk.js","mappings":"0JAIA,UAJA,WACE,OAAO,0CACR,C","sources":["pages/NotFound/NotFound.jsx"],"sourcesContent":["function NotFound() {\n  return <div>Smth missing!</div>;\n}\n\nexport default NotFound;\n"],"names":[],"sourceRoot":""}
