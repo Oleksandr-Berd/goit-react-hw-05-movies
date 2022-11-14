@@ -1,33 +1,33 @@
 import axios from 'axios';
+import { KEY } from './key';
+import { URL } from './Url';
 
-export const getMovies = () => {
+export const getTrendingMovies = () => {
   return axios
-    .get(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=7086826b195235db4a766ce943ec057f`
-    )
+    .get(`${URL}trending/movie/week?api_key=${KEY}`)
     .then(response => response.data.results);
 };
 
 export const getMovieById = movieId => {
   return axios
-    .get(
-      `https://api.themoviedb.org/3//movie/${movieId}?api_key=7086826b195235db4a766ce943ec057f`
-    )
+    .get(`${URL}/movie/${movieId}?api_key=${KEY}`)
     .then(response => response.data);
 };
 
 export const getMovieByCredits = movieId => {
   return axios
-    .get(
-      `https://api.themoviedb.org/3//movie/${movieId}/credits?api_key=7086826b195235db4a766ce943ec057f`
-    )
+    .get(`${URL}/movie/${movieId}/credits?api_key=${KEY}`)
     .then(response => response.data);
 };
 
 export const getMovieByReviews = movieId => {
   return axios
-    .get(
-      `https://api.themoviedb.org/3//movie/${movieId}/reviews?api_key=7086826b195235db4a766ce943ec057f`
-    )
+    .get(`${URL}/movie/${movieId}/reviews?api_key=${KEY}`)
+    .then(response => response.data.results);
+};
+
+export const getFilterMovies = filter => {
+  return axios
+    .get(`${URL}search/movie?api_key=${KEY}&query=${filter}`)
     .then(response => response.data.results);
 };
