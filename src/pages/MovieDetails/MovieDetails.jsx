@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'Fetch/getMovies';
 import css from '../MovieDetails/MovieDetails.module.css';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ const NavItemsDetails = [
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     getMovieById(movieId).then(setMovie);
@@ -38,7 +39,7 @@ export const MovieDetails = () => {
 
   return (
     <div className={css.container__details}>
-      <Link to="/" className={css.backButton}>
+      <Link to={location.state.from} className={css.backButton}>
         Go back
       </Link>
       <div className={css.container__info}>
