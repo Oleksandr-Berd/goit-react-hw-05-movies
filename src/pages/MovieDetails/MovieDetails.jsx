@@ -10,7 +10,7 @@ const NavItemsDetails = [
   { href: 'reviews', text: 'Reviews' },
 ];
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
@@ -67,7 +67,11 @@ export const MovieDetails = () => {
         <ul className={css.add__info}>
           {NavItemsDetails.map(({ href, text }) => (
             <li key={href}>
-              <Link to={href} className={css.details__element}>
+              <Link
+                to={href}
+                className={css.details__element}
+                state={{ from: location }}
+              >
                 {text}
               </Link>
             </li>
@@ -78,3 +82,5 @@ export const MovieDetails = () => {
     </div>
   );
 };
+
+export default MovieDetails;

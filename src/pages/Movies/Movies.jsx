@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { getFilterMovies } from 'Fetch/getMovies';
 import { SearchBox } from 'components/SearchBox/SearchBox';
 
-export const Movies = () => {
+const Movies = () => {
   const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -53,6 +53,7 @@ export const Movies = () => {
                 to={`${id}`}
                 className={css.searchMovies__link}
                 state={{ from: location }}
+                location={location}
               >
                 {' '}
                 {title}
@@ -65,3 +66,5 @@ export const Movies = () => {
     </main>
   );
 };
+
+export default Movies;

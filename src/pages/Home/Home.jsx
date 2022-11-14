@@ -3,7 +3,7 @@ import { getTrendingMovies } from 'Fetch/getMovies';
 import { useState, useEffect } from 'react';
 import Trending from 'components/Trending/Trending';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -17,3 +17,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
