@@ -32,7 +32,7 @@ const MovieDetails = () => {
     original_title,
   } = movie;
 
-  const backLinkHref = location.state?.from ?? '/home';
+  // const backLinkHref = location.state?.from ?? '/home';
 
   const realiseYear = release_date.split('-')[0] + ' year';
   const votePercentage = (vote_average * 10).toFixed(2) + ' %';
@@ -41,7 +41,7 @@ const MovieDetails = () => {
 
   return (
     <div className={css.container__details}>
-      <Link to={backLinkHref} className={css.backButton}>
+      <Link to="/movies" state={{ from: location }} className={css.backButton}>
         Go back
       </Link>
       <div className={css.container__info}>
